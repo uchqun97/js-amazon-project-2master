@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+  <title>Amazon Project</title>
+
+  <!-- responsive uchun code -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!--  Roboto font  Google Fonts sitedan. -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+
+  <!-- Css filelar aynan shu fileniki -->
+  <link rel="stylesheet" href="styles/shared/general.css">
+  <link rel="stylesheet" href="styles/shared/amazon-header.css">
+  <link rel="stylesheet" href="styles/pages/amazon.css">
+</head>
+<!--suppress BadExpressionStatementJS -->
+<body>
+<div class="amazon-header">
+  <div class="amazon-header-left-section">
+    <a href="amazon.html" class="header-link">
+      <img class="amazon-logo " alt="logo"
+           src="images/amazon-logo-white.png">
+      <img class="amazon-mobile-logo" alt="logo"
+           src="images/amazon-mobile-logo-white.png">
+    </a>
+  </div>
+
+  <div class="amazon-header-middle-section">
+    <input class="search-bar" type="text" placeholder="Search">
+
+    <button class="search-button">
+      <img class="search-icon" src="images/icons/search-icon.png" alt="search">
+    </button>
+  </div>
+
+  <div class="amazon-header-right-section">
+    <a class="orders-link header-link" href="orders.html">
+      <span class="returns-text">Returns</span>
+      <span class="orders-text">& Orders</span>
+    </a>
+
+    <ad class="cart-link header-link" href="checkout.html">
+      <img class="cart-icon" src="images/icons/cart-icon.png" alt="cart">
+      <div class="cart-quantity">0</div>
+      <div class="cart-text">Cart</div>
+    </ad>
+  </div>
+</div>
+
+<div class="main">
+  <div class="products-grid js-product-grid">
+  </div>
+</div>
+</div>
+<button class="js-button" onclick="
+displayMessage();
+        ">Add to cart</button>
+<p class="js-message"></p>
+<<script>
+  let timeoutId;
+
+  function displayMessage() {
+    const messageElement = document.querySelector('.js-message');
+    messageElement.innerHTML = 'Added';
+
+    clearTimeout(timeoutId);
+    timeoutId=setTimeout(function (){
+      messageElement.innerHTML = '';
+    }, 2000);
+    }
+
+</script>
+
+
+<script src="data/cart.js"></script>
+<script src="data/products.js"></script>
+<script src="scripts/amazon.js"></script>
+</body>
+</html>
